@@ -1,6 +1,5 @@
 # Discord Marcov
 Discordのチャットでマルコフ連鎖から学習し応答する人工無脳。  
-飼い主に似る  
 ![image](https://github.com/S4WA/discord-marcov/blob/master/files/Screenshot_1.png?raw=true)
 
 # Using

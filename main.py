@@ -5,7 +5,7 @@ from janome.tokenizer import Tokenizer
 dict_file = "chatbot-data.json"
 dic = {}
 tokenizer = Tokenizer()
-bot_token = "token"
+bot_token = "token" # Discord Bot Token
 
 if os.path.exists(dict_file):
 	dic = json.load(open(dict_file, "r"))
@@ -24,7 +24,7 @@ def register_dic(words):
 		if word == "。" or word == "?":
 			tmp = ["@"]
 			continue
-		#辞書更新毎にファイル保存
+		# 辞書更新毎にファイル保存
 		f = open(dict_file, "w", encoding="utf-8")
 		json.dump(dic, f)
 
