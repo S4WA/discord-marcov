@@ -84,7 +84,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.attachments:
+    if message.attachments: # 画像だけの空のメッセージだったら無視
         pass
     elif client.user != message.author:
         text = message.content
