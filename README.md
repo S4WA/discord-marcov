@@ -1,5 +1,6 @@
 # Discord Marcov
 Discordのチャットでマルコフ連鎖から学習し応答する人工無脳。
+![image]()
 
 # Using
 - [Janome (蛇の目)](https://mocobeta.github.io/janome/)
