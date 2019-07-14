@@ -2,12 +2,10 @@ import discord
 import os, re, json, random
 from janome.tokenizer import Tokenizer
 
-
-
-
 dict_file = "chatbot-data.json"
 dic = {}
 tokenizer = Tokenizer()
+bot_token = "token"
 
 if os.path.exists(dict_file):
     dic = json.load(open(dict_file, "r"))
@@ -62,11 +60,8 @@ def word_choice(sel):
     keys = sel.keys()
     return random.choice(list(keys))
 
-
-
-# botに返答させる
 def make_reply(text):
-    # まず単語を学習する
+    # 単語を学習する
     if text[-1] != "。": text += "。"
     words = tokenizer.tokenize(text)
     register_dic(words)
@@ -80,38 +75,20 @@ def make_reply(text):
             if face in dic: return make_sentence(face)
     return make_sentence("@")
 
-#ここからメッセージ取得&返信
-
-#
-#
-#以下、discord処理
-#
-#
-
+# Discord
 client = discord.Client()
-
-
 
 @client.event
 async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
-
-
-
+    print("Logged in as", client.user.name, client.user.id)
 
 @client.event
-
 async def on_message(message):
     if message.attachments:
         pass
-    
     elif client.user != message.author:
         text = message.content
         res = make_reply(text)
         await client.send_message(message.channel, res)
 
-
-client.run('token')
+client.run(token)
