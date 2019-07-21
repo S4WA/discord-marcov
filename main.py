@@ -12,10 +12,9 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-	if message.attachments: # 画像だけの空のメッセージだったら無視
-		pass
-	elif client.user != message.author:
+	if ((message.type == discord.MessageType.default) and (client.user != message.author)):
 		text = message.content
+		print(message.author.name)
 		res = reply.make_reply(text)
 		channel = message.channel
 		async with channel.typing():
