@@ -1,5 +1,5 @@
 # coding=utf-8
-import os, re, json, random, time
+import os, json, random
 from janome.tokenizer import Tokenizer
 
 dict_file = "chatbot-data.json"
