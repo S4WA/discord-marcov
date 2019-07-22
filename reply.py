@@ -59,9 +59,10 @@ def word_choice(sel):
 
 def make_reply(text):
 	# 学習
-	if text[-1] != "。": text += "。"
+	# if text[-1] != "。": text += "。"
 	words = tokenizer.tokenize(text)
 	register_dic(words)
+
 	# 辞書に単語があれば、そこから
 	for w in words:
 		face = w.surface
